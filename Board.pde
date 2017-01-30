@@ -3,6 +3,7 @@ class Board {
   boolean[][] matrix;
   int wide, high;
   
+  int edgeBuffer;
   int tileLength;
   
   public Board( int wide, int high) {
@@ -10,9 +11,9 @@ class Board {
     this.high = high;
     this.matrix = new boolean[this.wide][this.high];
     
-    this.tileLength = (height - 50) / high;
-    System.out.println((height - 50) / high);
-    
+    edgeBuffer = 25;
+    this.tileLength = (height - 2 * edgeBuffer) / high;
+
   }
   
   /**
@@ -38,19 +39,18 @@ class Board {
   */
   public void drawBoard() {
     
-    
-    
     for (int i = this.high - 1; i >= 0; i--) {
+      
       for (int j = 0; j < this.wide; j++) {
         if (matrix[j][i]) {
           fill(255);
         } else {
           fill(100);
         }
-        rect(10 + j * tileLength, height - 25 - tileLength - i * tileLength, tileLength, tileLength);
+        rect(edgeBuffer + j * tileLength, height - edgeBuffer - tileLength - i * tileLength, tileLength, tileLength);
       }
       
     }
-    
   }
+  
 }
