@@ -2,10 +2,10 @@ Board b;
 Config conf;
 
 void settings() {
-  b = new Board(5, 7);
   conf = new Config();
   size(conf.DISP_WIDTH, conf.DISP_HEIGHT, P2D);
-  b.array[2][4] = true;
+  b = new Board(5, 7);
+  b.matrix[2][4] = true;
 }
 
 void setup() {
@@ -13,5 +13,6 @@ void setup() {
 }
 
 void draw() {
-  b.printBoard();
+  background(0);
+  b.drawBoard();
 }
