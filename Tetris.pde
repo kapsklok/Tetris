@@ -14,5 +14,4 @@ void setup() {
 
 void draw() {
   b.printBoard();
-  
 }
