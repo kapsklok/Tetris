@@ -1,0 +1,3 @@
+Read edgeBuffer value from config file
+Make sure tileLength won't push part of the board of the screen in either direction
+figure out how to store pieces
