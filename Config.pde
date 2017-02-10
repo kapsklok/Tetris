@@ -14,10 +14,39 @@ class Config {
     float FLOOR_HEIGHT;
     String FLOOR_TEXTURE;
     int SCORE_PER_WAVE;
-    
+    boolean[][][] TETROMINOS;
+    int I, O, T, Z, L;
 
   
   public Config() {
+    
+    I = 0;
+    O = 1;
+    T = 2;
+    Z = 3;
+    L = 4;
+    
+    boolean[][] I = new boolean[][] {
+      {true, true, true, true}
+    };
+    boolean[][] O = new boolean[][] {
+      {true, true},
+      {true, true}
+    };
+    boolean[][] T = new boolean[][] {
+      {true, true, true},
+      {false, true, false}
+    };
+    boolean[][] Z = new boolean[][] {
+      {true, true, false},
+      {false, true, true}
+    };
+    boolean[][] L = new boolean[][] {
+      {true, true, true},
+      {true, false, false}
+    };
+    
+    TETROMINOS = new boolean[][][]{I, O, T, Z, L};
     
     try {
       
